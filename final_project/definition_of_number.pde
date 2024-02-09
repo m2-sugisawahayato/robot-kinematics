@@ -28,3 +28,5 @@ float r = 10;     //球の大きさ
 int vx = 0;  //球の速度の設定
 int vy = int(random(5,12));
 int vz = 0;
+
+float Px , Py ,Pz;

@@ -2,6 +2,11 @@ void draw(){
  
  background(255, 255, 255);
 
+ Px = (sin(radians(-rad0))*cos(radians(-rad1))*arm2L + sin(radians(-rad0))*cos(radians(-rad1+rad2))*arm3L);
+ Py = cos(radians(-rad0))*cos(radians(-rad1))*arm2L + cos(radians(-rad0))*cos(radians(-rad1+rad2))*arm3L;
+ Pz = arm1L + sin(radians(-rad1))*arm2L + sin(radians(-rad1+rad2))*arm3L;
+ println("先端の現在地"+Px,Py,Pz);
+
  if(millis() - startTime > S && !started){
    started = true;
  } 
@@ -46,7 +51,7 @@ void draw(){
     }
     if (rad1 >= -80){
      if(key == 's'){
-       rad1 = rad1 - 1.5;
+       rad1 = rad1 - 1.6;
      }
      if(key == 'S'){
        rad1 = rad1 + 1;
@@ -54,7 +59,7 @@ void draw(){
     }
     if (rad2 <= 90){
      if(key == 'w'){
-      rad2 = rad2 + 1.5;
+      rad2 = rad2 + 1.6;
      }
      if(key == 'W'){
       rad2 = rad2 - 1;
@@ -84,6 +89,7 @@ void draw(){
    box(arm3W, arm3L, arm3W);
 
    popMatrix();
+  
   
   }
 }
