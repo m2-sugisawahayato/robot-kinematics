@@ -7,13 +7,13 @@ void draw(){
  Pz = arm1L + sin(radians(-rad1))*arm2L + sin(radians(-rad1+rad2))*arm3L;
  println("先端の現在地"+Px,Py,Pz);
 
-   if(keyPressed){
-     if(key == 't'){
-       vx = vx0;
-       vy = vy0;
-       vz = vz0;
-     }
+ if(keyPressed){
+   if(key == 't'){
+     vx = vx0;
+     vy = vy0;
+     vz = vz0;
    }
+ }
 
   //当たり判定
   if(-120 <= rad0 && rad0 <= -60 
@@ -54,7 +54,7 @@ void draw(){
     }
     if (rad1 >= -80){
      if(key == 's'){
-       rad1 = rad1 - 1.6;
+       rad1 = rad1 - sensitivity;
      }
      if(key == 'w'){
        rad1 = rad1 + 1;
@@ -62,7 +62,7 @@ void draw(){
     }
     if (rad2 <= 90){
      if(key == 'a'){
-      rad2 = rad2 + 1.6;
+      rad2 = rad2 + sensitivity;
      }
      if(key == 'A'){
       rad2 = rad2 - 1;
@@ -79,6 +79,7 @@ void draw(){
     
    //腕2の作成
    translate(0, 0, arm1L/2);
+   fill(200);
    sphere(25);
    rotateX(radians(rad1));
    translate(0,arm2L/2,0);
@@ -88,6 +89,8 @@ void draw(){
 
    //バットの作成
    translate(0, arm2L/2, 0);
+   fill(200);
+   sphere(25);
    rotateX(radians(rad2));
    translate(0,arm3L/2,0);
    fill(100, 100, 100);
