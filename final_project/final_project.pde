@@ -1,5 +1,5 @@
 void draw(){
- 
+
  background(255, 255, 255);
 
  Px = sin(radians(-rad0))*cos(radians(-rad1))*arm2L + sin(radians(-rad0))*cos(radians(-rad1+rad2))*arm3L;
@@ -56,15 +56,15 @@ void draw(){
      if(key == 's'){
        rad1 = rad1 - 1.6;
      }
-     if(key == 'S'){
+     if(key == 'w'){
        rad1 = rad1 + 1;
      }
     }
     if (rad2 <= 90){
-     if(key == 'w'){
+     if(key == 'a'){
       rad2 = rad2 + 1.6;
      }
-     if(key == 'W'){
+     if(key == 'A'){
       rad2 = rad2 - 1;
      }
     }
@@ -79,10 +79,12 @@ void draw(){
     
    //腕2の作成
    translate(0, 0, arm1L/2);
+   sphere(25);
    rotateX(radians(rad1));
    translate(0,arm2L/2,0);
    fill(50, 50, 50);
    box(arm2W, arm2L, arm2W);
+
 
    //バットの作成
    translate(0, arm2L/2, 0);

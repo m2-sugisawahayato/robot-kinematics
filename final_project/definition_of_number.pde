@@ -18,7 +18,7 @@ int swingSpeed = 2;  //スイングスRピード
 
 //球の設定
 float sphereX = (arm2L + arm3L)/2;    //球の初期位置
-float sphereY = -widthX*1.;               
+float sphereY = -widthX;               
 float sphereZ = arm1L/2;
 float r = 10;     //球の大きさ
 int vx0 = 0;  //球の速度の設定
