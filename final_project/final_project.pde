@@ -93,7 +93,7 @@ void draw(){
    sphere(25);
    rotateX(radians(rad2));
    translate(0,arm3L/2,0);
-   fill(100, 100, 100);
+   fill(115, 78, 48);
    box(arm3W, arm3L, arm3W);
 
    popMatrix();
