@@ -2,17 +2,19 @@ void draw(){
  
  background(255, 255, 255);
 
- Px = (sin(radians(-rad0))*cos(radians(-rad1))*arm2L + sin(radians(-rad0))*cos(radians(-rad1+rad2))*arm3L);
+ Px = sin(radians(-rad0))*cos(radians(-rad1))*arm2L + sin(radians(-rad0))*cos(radians(-rad1+rad2))*arm3L;
  Py = cos(radians(-rad0))*cos(radians(-rad1))*arm2L + cos(radians(-rad0))*cos(radians(-rad1+rad2))*arm3L;
  Pz = arm1L + sin(radians(-rad1))*arm2L + sin(radians(-rad1+rad2))*arm3L;
  println("先端の現在地"+Px,Py,Pz);
 
- if(millis() - startTime > S && !started){
-   started = true;
- } 
+   if(keyPressed){
+     if(key == 't'){
+       vx = vx0;
+       vy = vy0;
+       vz = vz0;
+     }
+   }
 
- if(started){
-  
   //当たり判定
   if(-120 <= rad0 && rad0 <= -60 
      && -100 <= sphereY && sphereY <= 100 
@@ -22,6 +24,7 @@ void draw(){
    vy  = (-1)*(vy + swingSpeed);  //打球速度
    vz  = vz + swingSpeed /10;
   }   
+    
     
 
    //球の作成
@@ -91,5 +94,5 @@ void draw(){
    popMatrix();
   
   
-  }
+  
 }
